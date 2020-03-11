@@ -1,7 +1,11 @@
-package com.solak.workshopmongo.model;
+package com.solak.workshopmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user")  //diz que ele será uma coleção do MongoDB
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -9,6 +13,7 @@ public class User implements Serializable{
 	 * //Serializable: para objetos sejam convertidos em bytes para serem trafegáveis
 	 */
 	
+	@Id
 	private String id;
 	private String nome;
 	private String email;
