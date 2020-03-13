@@ -57,5 +57,12 @@ public class UserResource {
 				buildAndExpand(obj.getId()).toUri(); // pega o endereço do novo objeto que inseriu no bco
 		return ResponseEntity.created(uri).build(); //  created retorna o cod de resposta HTTP 201
 	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> delete(@PathVariable String id){ 
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
+	
 
 }
